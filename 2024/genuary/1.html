@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>#genuary1 Particles, lots of them. | Genuary 2024 | Dark Arts and Sciences</title>
+    <style>
+        #game {
+            padding: 2px 1em;
+            border-radius: 1em;
+            border: solid 2px black;
+        }
+    </style>
+    <script type="text/javascript">
+        function numberName(n, singular, plural) { 
+            return "" + n + " " + (n == 1 ? singular : plural); 
+        }
+        
+        var particles = 0;
+        function addParticle() {
+            particles++;
+            var inventoryText = "You have " + numberName(particles, "particle", "particles") + ".";
+            if (particles > 9) inventoryText += "<br>Nothing else is going to happen.";
+            if (particles > 99) inventoryText += "<br>No, seriously, there's no game here, it took me all day to get the website up.";
+            document.getElementById("inventory").innerHTML = inventoryText;
+        }
+    </script> 
+</head>
+
+<body>
+
+<h1><a href="http://genuary.art/prompts#jan1">#genuary1</a> - Particles, lots of them.</h1>
+
+<div id="game" onclick="addParticle()">
+    <p id="inventory">You have nothing.</p>
+</div>
+
+</body>
+</html>
